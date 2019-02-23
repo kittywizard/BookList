@@ -21,10 +21,10 @@ function grabData(){
     const card = document.querySelector('.card');
     
     //display everything in an unordered list
-    const createList = document.createElement('ul');
-    results.insertBefore(createList, card);
+    // const createList = document.createElement('ul');
+    // results.insertBefore(createList, card);
 
-    const listItem = document.createElement('li');
-    createList.insertBefore(listItem, );
+    // const listItem = document.createElement('li');
+    // createList.insertBefore(listItem, );
     
 }
