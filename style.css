@@ -9,3 +9,8 @@
 #results {
     display: none;
 }
+
+h6 {
+    font-weight: bold;
+    color: #1a9c9c;
+}
