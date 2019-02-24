@@ -1,6 +1,10 @@
 //event listener
 
 document.getElementById('input').addEventListener('submit', function(e){
+    //display the results portion of the UI
+    //if there's something in local storage this should be displayed to start with
+    //probably check outside of this function?
+    results.style.display = 'block';
     grabData();
 
     e.preventDefault();
@@ -25,22 +29,45 @@ function grabData(){
 
     //get UI 
     const results = document.getElementById('results');
-    const card = document.querySelector('.card');
 
-    //display the results portion of the UI
-    //if there's something in local storage this should be displayed to start with, probably check outside of this function?
-
-    results.style.display = 'block';
+    //UL Items
+    const titleUL = document.getElementById('titleList');
+    const authorUL = document.getElementById('authorList');
+    const positionUL = document.getElementById('positionList');
+    const genreUL = document.getElementById('genreList');
     
-    //display everything in a list
-    const li = document.createElement('li');
-    li.appendChild(document.createTextNode(title));
+    //display everything in a list, add items
 
-    console.log(li);
+    /* 
+    const titleLI = document.createElement('li');
+    titleLI.appendChild(document.createTextNode(title));
+    titleUL.appendChild(titleLI);
 
-    // results.insertBefore(createList, card);
+    //display author
+    const authorLI = document.createElement('li');
+    authorLI.appendChild(document.createTextNode(author));
+    authorUL.appendChild(authorLI);
 
-    // const listItem = document.createElement('li');
-    // createList.insertBefore(listItem, );
+    //display position
+    const positionLI = document.createElement('li');
+    positionLI.appendChild(document.createTextNode(position));
+    positionUL.appendChild(positionLI);
+
+    //display genre
+    const genreLI = document.createElement('li');
+    genreLI.appendChild(document.createTextNode(tags));
+    genreUL.appendChild(genreLI);
+    */
+   appendList(titleUL, title);
+   appendList(authorUL, author);
+   appendList(genreUL, tags);
+   appendList(positionUL, position);
     
+}
+
+function appendList(UL, text){
+    //write function to display all four of the elements
+    let LI = document.createElement('li');
+    LI.appendChild(document.createTextNode(text));
+    UL.appendChild(LI);
 }
